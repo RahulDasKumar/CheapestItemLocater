@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/CheapestItemLocater.iml" filepath="$PROJECT_DIR$/.idea/CheapestItemLocater.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PriceComparison2/demo/demo.iml" filepath="$PROJECT_DIR$/PriceComparison2/demo/demo.iml" />
+    </modules>
+  </component>
+</project>
