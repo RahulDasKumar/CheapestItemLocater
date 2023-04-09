@@ -1,11 +1,10 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demo.Fruit.Item;
+import com.example.demo.Fruit.ItemRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.List;
 

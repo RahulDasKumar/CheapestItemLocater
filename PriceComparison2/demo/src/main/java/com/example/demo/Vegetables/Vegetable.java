@@ -20,7 +20,7 @@ import java.util.Iterator;
 @Table(name = "vegetable")
 public class Vegetable {
     @Id
-    @Column(name = "vegetable_name")
+    @Column(name = "product_name")
     private String name;
     @Column(name = "price")
     private double price;

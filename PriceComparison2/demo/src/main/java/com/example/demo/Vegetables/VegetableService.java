@@ -1,6 +1,5 @@
 package com.example.demo.Vegetables;
 
-import com.example.demo.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
