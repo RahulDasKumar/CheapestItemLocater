@@ -7,6 +7,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import javax.persistence.*;
 import java.io.IOException;
@@ -91,7 +92,8 @@ public class Fruit{
     public void setLink(String link) {
         this.link = link;
     }
-    public double findCheapestItem(String item) throws IOException, InterruptedException, URISyntaxException {
+
+    public void findCheapestItem(String item) throws IOException, InterruptedException, URISyntaxException {
 // Building request
         HttpRequest getRequestofItem = HttpRequest.newBuilder()
                 .uri(new URI("https://serpapi.com/search.json?q="+item+"&tbm=shop&hl=en&gl=us&api_key=" + apiKey)).build();
@@ -122,7 +124,7 @@ public class Fruit{
         }
         setLink(urlList.get(Algorithms.indexOfSmallest(itemList)));
         setSources(storeList.get(Algorithms.indexOfSmallest(itemList)));
-        return itemList.get(Algorithms.indexOfSmallest(itemList));
+        setPrice(itemList.get(Algorithms.indexOfSmallest(itemList)));
     }
 
 
