@@ -16,7 +16,7 @@ public class DeliPriceUpdater {
     private DeliRepository deliRepository;
 
 
-    @Scheduled(cron = "0 0 0 ? * TUE *")
+    @Scheduled(cron = "0 0 0 * * TUE")
     public void findCheapestDeliProducts() throws IOException, URISyntaxException, InterruptedException {
         Deli Chicken = new Deli("Chicken", deliRepository.findPriceByName("Chicken").getPrice(), deliRepository.findStoreByName("Chicken").getSources(), deliRepository.findUrlByName("Chicken").getLink());
         Chicken.findCheapestItem(Chicken.getName());

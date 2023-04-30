@@ -17,7 +17,7 @@ public class FruitPriceUpdater {
 
 
 
-    @Scheduled(cron = "0 0 0 ? * MON *")
+    @Scheduled(cron = "0 0 0 ? * MON")
     public void findCheapestFruits() throws IOException, URISyntaxException, InterruptedException {
         Fruit banana = new Fruit("banana", itemRepository.findPriceByName("banana").getPrice(),
                 itemRepository.findStoreByName("banana").getSources(), itemRepository.findUrlByName("banana").getLink());

@@ -14,7 +14,7 @@ public class VegetablePriceUpdater {
     @Autowired
     private VegetableRepository vegetableRepository;
 
-    @Scheduled(cron = "0 0 0 ? * THU *")
+    @Scheduled(cron = "0 0 0 * * THU")
     public void findCheapestVegetableProducts() throws IOException, URISyntaxException, InterruptedException {
         Vegetable Broccoli = new Vegetable("Broccoli", vegetableRepository.findPriceByName("Broccoli").getPrice(), vegetableRepository.findStoreByName("Broccoli").getSources(), vegetableRepository.findUrlByName("Broccoli").getLink());
         Broccoli.findCheapestItem(Broccoli.getName());

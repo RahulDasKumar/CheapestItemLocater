@@ -15,7 +15,7 @@ public class DairyPriceUpdater {
     private DairyRepository dairyRepository;
 
 
-    @Scheduled(cron = "0 0 0 ? * WED *")
+    @Scheduled(cron = "0 0 0 * * WED")
     public void findDairyProducts() throws IOException, URISyntaxException, InterruptedException {
         Dairy Milk = new Dairy("Milk", dairyRepository.findPriceByName("Milk").getPrice(), dairyRepository.findStoreByName("Milk").getSources(), dairyRepository.findUrlByName("Milk").getLink());
         Milk.findCheapestItem(Milk.getName());
