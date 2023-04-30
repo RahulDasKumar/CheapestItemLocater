@@ -1,19 +1,21 @@
 package com.example.demo.Fruit;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public class ItemService {
-    private final ItemRepository itemRepository;
+    private final FruitRepository itemRepository;
+
     @Autowired
-    public ItemService(ItemRepository itemRepository) {
+    public ItemService(FruitRepository itemRepository) {
         this.itemRepository = itemRepository;
     }
 
     //@GetMapping
-    public List<Item> getItem(){
+    public List<Fruit> getItem(){
         return
                 itemRepository.findAll();
 

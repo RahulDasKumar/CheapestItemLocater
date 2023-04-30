@@ -92,7 +92,7 @@ public class Vegetable {
     public String getApiKey(){
         return apiKey;
     }
-    public double findCheapestItem(String item) throws IOException, InterruptedException, URISyntaxException {
+    public void findCheapestItem(String item) throws IOException, InterruptedException, URISyntaxException {
 // Building request
         HttpRequest getRequestofItem = HttpRequest.newBuilder()
                 .uri(new URI("https://serpapi.com/search.json?q="+item+"&tbm=shop&hl=en&gl=us&api_key=" + apiKey)).build();
@@ -123,7 +123,7 @@ public class Vegetable {
         }
         setLink(urlList.get(Algorithms.indexOfSmallest(itemList)));
         setSources(storeList.get(Algorithms.indexOfSmallest(itemList)));
-        return itemList.get(Algorithms.indexOfSmallest(itemList));
+        setPrice(itemList.get(Algorithms.indexOfSmallest(itemList)));
         // setSources(storeList.get(Algorithms.indexOfSmallest(itemList)));
 
     }

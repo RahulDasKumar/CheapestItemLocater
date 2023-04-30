@@ -15,7 +15,7 @@ public class DairyService {
         this.dairyRepository = dairyRepository;
     }
 
-    public List<Dairy> getVegetables(){
+    public List<Dairy> getDairy(){
         return dairyRepository.findAll();
     }
 }

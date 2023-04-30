@@ -7,9 +7,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.io.IOException;
@@ -23,7 +20,7 @@ import java.util.Iterator;
 
 @Entity
 @Table(name = "product_info")
-public class Item {
+public class Fruit{
 
 
     @Id
@@ -39,27 +36,26 @@ public class Item {
 
     @Column(name = "url")
     private String link;
-//    @Value("${api.key}")
-//    private String apiKey;
 
     @Transient
     String apiKey = "02fc4b553614e0b1815f17a2258e88dae88b797d14a7ba778238a25aee438764";
 
-    public Item() {
+
+    public Fruit() {
     }
 
-    public Item( String name, Double price, String sources) {
+    public Fruit(String name, Double price, String sources) {
         this.sources = sources;
         this.name = name;
         this.price = price;
     }
-    public Item( String name, Double price, String sources, String url) {
+    public Fruit(String name, Double price, String sources, String url) {
         this.sources = sources;
         this.name = name;
         this.price = price;
         this.link = url;
     }
-    public Item(String name, double price) {
+    public Fruit(String name, double price) {
         this.name = name;
         this.price = price;
     }
@@ -95,10 +91,6 @@ public class Item {
     public void setLink(String link) {
         this.link = link;
     }
-
-    public String getApiKey(){
-        return apiKey;
-    }
     public double findCheapestItem(String item) throws IOException, InterruptedException, URISyntaxException {
 // Building request
         HttpRequest getRequestofItem = HttpRequest.newBuilder()
@@ -130,10 +122,10 @@ public class Item {
         }
         setLink(urlList.get(Algorithms.indexOfSmallest(itemList)));
         setSources(storeList.get(Algorithms.indexOfSmallest(itemList)));
-       return itemList.get(Algorithms.indexOfSmallest(itemList));
-       // setSources(storeList.get(Algorithms.indexOfSmallest(itemList)));
-
+        return itemList.get(Algorithms.indexOfSmallest(itemList));
     }
+
+
     @Override
     public String toString() {
         return "Item{" +

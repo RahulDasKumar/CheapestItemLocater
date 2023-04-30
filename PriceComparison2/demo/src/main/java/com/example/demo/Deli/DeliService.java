@@ -15,7 +15,7 @@ public class DeliService {
         }
 
         //@GetMapping
-        public List<Deli> getItem(){
+        public List<Deli> getDeli(){
             return deliRepository.findAll();
 
         }

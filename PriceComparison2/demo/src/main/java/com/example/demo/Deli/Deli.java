@@ -32,8 +32,6 @@ public class Deli {
 
         @Column(name = "url")
         private String link;
-//    @Value("${api.key}")
-//    private String apiKey;
 
         @Transient
         String apiKey = "02fc4b553614e0b1815f17a2258e88dae88b797d14a7ba778238a25aee438764";
@@ -92,7 +90,7 @@ public class Deli {
         public String getApiKey(){
             return apiKey;
         }
-        public double findCheapestItem(String item) throws IOException, InterruptedException, URISyntaxException {
+        public void findCheapestItem(String item) throws IOException, InterruptedException, URISyntaxException {
 // Building request
             HttpRequest getRequestofItem = HttpRequest.newBuilder()
                     .uri(new URI("https://serpapi.com/search.json?q="+item+"&tbm=shop&hl=en&gl=us&api_key=" + apiKey)).build();
@@ -123,9 +121,7 @@ public class Deli {
             }
             setLink(urlList.get(Algorithms.indexOfSmallest(itemList)));
             setSources(storeList.get(Algorithms.indexOfSmallest(itemList)));
-            return itemList.get(Algorithms.indexOfSmallest(itemList));
-            // setSources(storeList.get(Algorithms.indexOfSmallest(itemList)));
-
+            setPrice(itemList.get(Algorithms.indexOfSmallest(itemList)));
         }
         @Override
         public String toString() {
