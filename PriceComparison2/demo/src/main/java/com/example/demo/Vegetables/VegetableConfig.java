@@ -21,7 +21,7 @@ public class VegetableConfig {
             Vegetable Carrots = new Vegetable("Carrots", vegetableRepository.findPriceByName("Carrots").getPrice(), vegetableRepository.findStoreByName("Carrots").getSources(), vegetableRepository.findUrlByName("Carrots").getLink());
             //Carrots.findCheapestItem(Carrots.getName());
             Vegetable GreenBeans = new Vegetable("Green-beans", vegetableRepository.findPriceByName("Green-beans").getPrice(), vegetableRepository.findStoreByName("Green-beans").getSources(), vegetableRepository.findUrlByName("Green-beans").getLink());
-            GreenBeans.findCheapestItem(GreenBeans.getName());
+            //GreenBeans.findCheapestItem(GreenBeans.getName());
             Vegetable Spinach = new Vegetable("Spinach", vegetableRepository.findPriceByName("Spinach").getPrice(), vegetableRepository.findStoreByName("Spinach").getSources(), vegetableRepository.findUrlByName("Spinach").getLink());
             //Spinach.findCheapestItem(Spinach.getName());
             Vegetable Squash = new Vegetable("Squash", vegetableRepository.findPriceByName("Squash").getPrice(), vegetableRepository.findStoreByName("Squash").getSources(), vegetableRepository.findUrlByName("Squash").getLink());
